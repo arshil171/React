@@ -6,6 +6,7 @@ const App = () => {
   let [name , setName] = useState("Arshil")
   let [city , setcity] = useState("Ahmedabad")
   let [power , setPower] = useState("Bilionare")
+  let [count ,setCount] = useState(0)
   
   function handle(){
      setName("krrish")
@@ -14,6 +15,7 @@ const App = () => {
     setcity("Ahmedabad")
     setPower("Poor")
   }
+  console.log("render")
   return (
     
    <React.Fragment>
@@ -21,6 +23,17 @@ const App = () => {
     <p className='city'>City : {city} </p>
     <p>Power : {power}</p>
     <button onClick={handle}>Change State</button>
+
+
+
+    <h1>Decrement</h1>
+    <p>Count :{count}</p>
+    <button onClick={()=>{
+      setCount(count-1)
+    }}>Dec</button>
+    <button onClick={()=>{
+      setCount(count+1)
+    }}> inc</button>
     <Child name ={name} city = {city} power = {power}/>
     </React.Fragment>
   )
